@@ -10,42 +10,42 @@ const fragment = document.createDocumentFragment();
 
 const Pizza = [{
         ID: 1,
-        nombre: 'Muzzarella',
+        nombre: 'muzzarella',
         ingradientes: ["Muzzarella", "Salsa de tomate", "Aceituna", "Oregano"],
         precio: 540,
         img: './assets/img/muzza.jpg'
     },
     {
         ID: 2,
-        nombre: 'Napolitana',
+        nombre: 'napolitana',
         ingradientes: ["Muzzarella", "Salsa de tomate", "Tomate", "Jamon"],
         precio: 580,
         img: './assets/img/napo.jpg'
     },
     {
         ID: 3,
-        nombre: 'Calabresa',
+        nombre: 'calabresa',
         ingradientes: ["Muzzarella", "Longaniza", "Provolone", "Aceituna"],
         precio: 600,
         img: './assets/img/calabresa.jpg'
     },
     {
         ID: 4,
-        nombre: '4 Queso',
+        nombre: '4 queso',
         ingradientes: ["Muzzarella", "Roquefort", "Parmesano", "Gruyer"],
         precio: 620,
         img: './assets/img/4Q.jpg'
     },
     {
         ID: 5,
-        nombre: 'Panceta',
+        nombre: 'panceta',
         ingradientes: ["Muzzarella", "Panceta", "Huevo frito", "Aceituna"],
         precio: 670,
         img: './assets/img/panceta.jpg'
     },
     {
         ID: 6,
-        nombre: 'Jamon crudo',
+        nombre: 'jamon crudo',
         ingradientes: ["Muzzarella", "Jamon crudo", "Aceituna negras", "Rucula"],
         precio: 700,
         img: './assets/img/jamon_crudo.jpg'
@@ -68,8 +68,8 @@ const limpiar = () => {
 btnBuscar.addEventListener('click', () => {
     limpiar();
     limpiarBusqueda();
-    let pizza = nombrePizza.value;
-    const resultadoBusqueda = Pizza.find(el => el.nombre.toLowerCase() == pizza);
+    let pizza = nombrePizza.value.toLowerCase();
+    const resultadoBusqueda = Pizza.find(el => el.nombre == pizza);
     if (resultadoBusqueda) {
         templateCardSearch.querySelector('h3').textContent = `${resultadoBusqueda.nombre}`;
         templateCardSearch.querySelector('img').setAttribute('src', `${resultadoBusqueda.img}`);
